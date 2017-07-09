@@ -1,3 +1,12 @@
+/**
+ * Freckles
+ * TL: 3s
+ * Create an EMST, MST from a Complete Graph.
+ * Constraints:
+ *   500 <= T <= 10000
+ *   1   <= N <= 100
+ */
+
 #include <cstdio>
 #include <cmath>
 #include <utility>
