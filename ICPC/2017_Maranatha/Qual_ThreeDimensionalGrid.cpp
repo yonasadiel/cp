@@ -1,3 +1,6 @@
+/**
+ * Solution by Ensof Barhami
+ */
 #include<bits/stdc++.h>
 using namespace std;
 long long a[50][50];
