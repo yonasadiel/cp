@@ -18,3 +18,7 @@
 ### Minimum Spanning Tree
 
 * **ICPC Maranatha 2017 Trial 2 'Freckles'** : EMST without Delaunay Triangulation
+
+## Heap
+
+* **OSN 2017 'PekanbaruDefense'** : Minimum Cost with Conditions
