@@ -16,8 +16,10 @@ void segtree_build(int node, int le, int ri) {
     int node_left  = (node << 1);
     int node_right = (node << 1) + 1;
     int mi         = ((le+ri) >> 1);
-    segtree_build(node_left , le,   mi); // build left
-    segtree_build(node_right, mi+1, ri); // build right
+
+    segtree_build(node_left , le,   mi);
+    segtree_build(node_right, mi+1, ri);
+
     segtree[node] = segtree_operation(segtree[node_left], segtree[node_right]);
   }
 }
@@ -38,6 +40,19 @@ int segtree_range_query(int node, int le, int ri, int q_le, int q_ri) {
   return segtree_operation(exec_left, exec_right);
 }
 
+void segtree_update(int node, int le, int ri, int pos, int val) {
+  if (le == ri) { segtree[node] = val; return; }
+
+  int node_left  = (node << 1);
+  int node_right = (node << 1) + 1;
+  int mi = (le+ri) >> 1;
+
+  if (pos <= mi) { segtree_update(node_left , le  , mi, pos, val); }
+  else           { segtree_update(node_right, mi+1, ri, pos, val); }
+
+  segtree[node] = segtree_operation(segtree[node_left], segtree[node_right]);
+}
+
 int main() {
   int arr[] = {4, 3, 7, 9, 5, 1};
 
@@ -46,8 +61,9 @@ int main() {
   segtree_build(1, 0, to_be_segtree.size()-1);
 
   while (true) {
-    int a,b;
-    scanf("%d%d",&a,&b);
-    printf("%d\n",segtree_range_query(1, 0, to_be_segtree.size()-1, a,b));
+    int d,a,b;
+    scanf("%d%d%d",&d,&a,&b);
+    if (d == 1) printf("%d\n",segtree_range_query(1, 0, to_be_segtree.size()-1, a,b));
+    if (d == 2) segtree_update(1, 0, to_be_segtree.size()-1, a, b);
   }
 }
