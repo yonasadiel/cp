@@ -1,8 +1,3 @@
-/**
- * GARDENHU
- * Simple Convex Hull
- */
-
 #include <cstdio>
 #include <cmath>
 #include <utility>
@@ -91,6 +86,6 @@ int main() {
   for (int i=1; i<S.size(); i++) {
     ret += sqrt(1.0 * dist2(S[i], S[i-1]));
   }
-  printf("%.0lf\n", ret);
+  printf("%.7lf\n", ret);
 
 }
