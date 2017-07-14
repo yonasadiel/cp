@@ -1,84 +1,91 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <cmath>
+#include <utility>
+#include <vector>
+#include <algorithm>
+#define point pair<long long,long long>
+#define x first
+#define y second
+#define mp make_pair
 using namespace std;
 
-struct titik {
-	double x,y; 
-	titik() { }; 
-	titik(double a, double b) {
-		x=a;
-		y=b;
-	}
-};
-titik pohon[10003];
-
-// TRUE kalau KIRI atau LURUS
-bool belok(titik a, titik b, titik c) {
-	double sinn=(b.x-a.x)*(c.y-b.y)-(b.y-a.y)*(c.x-b.x);
-	return (sinn>=0);
+long long cross (point a, point b, point c) {
+  return (a.x - b.x) * (c.y - b.y) - (a.y - b.y) * (c.x - b.x);
 }
 
-// komparator untuk sort
-bool komparator(titik a, titik b) {
-	if (a.x!=b.x) {
-		return (a.x<b.x);
-	} else {
-		return (a.y<b.y);
-	}
+bool collinear (point a, point o, point b) {
+  return cross(a, o, b) == 0;
 }
 
-stack<titik> tumpukan;
+// ganti di sini buat ganti arah
+bool ccw (point a, point o, point b) {
+  return cross(a, o, b) > 0;
+}
+
+point pivot;
+
+long long dist2(point a, point b) {
+  return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
+}
+
+bool angle_cmp(point a, point b) {
+  if (collinear(pivot, a, b)) {
+    return dist2(a, pivot) < dist2(b, pivot);
+  }
+  return ccw(pivot, a, b);
+}
+
+// ganti di sini untuk urutan titik, berdasar x dulu atau y dulu
+bool cmp(point a, point b) {
+  return (a.y < b.y) || (a.y == b.y && a.x < b.x);
+}
+
+vector<point> P, S;
+// P is going-to-be convex hull, result will be stored in S.
+
+void convexHull() {
+  int n = (int) P.size();
+  if (n < 3) return;
+
+  int PO = 0; // index of most left-bottom point
+  for (int i=1; i<n; i++) {
+    if (cmp(P[i], P[PO])) {
+      PO = i;
+    }
+  }
+  swap(P[0], P[PO]);
+  pivot = P[0];
+
+  sort(P.begin()+1, P.end(), angle_cmp);
+
+  for (int i=0, sz=0; i<n; ) {
+    if (sz < 2 || ccw(S[sz-2], S[sz-1], P[i])) {
+      S.push_back(P[i]); sz++; i++;
+    } else {
+      S.pop_back();
+      sz--;
+    }
+  }
+}
 
 int main() {
-	int angka;
-	double eks,ye;
-	scanf("%d",&angka);
-	for (int i=0; i<angka; i++) {
-		scanf("%lf %lf", &eks, &ye);
-		pohon[i]=titik(eks,ye);
-	}
-	sort(pohon, pohon+angka, komparator);
-	for (int i=0; i<angka; i++) {
-	}
-	titik temp;
-	for (int i=0; i<angka; i++) {
-		if (tumpukan.size()<2) {
-			tumpukan.push(pohon[i]);
-		} else {
-			temp=tumpukan.top();
-			tumpukan.pop();
-			while ( belok(tumpukan.top(),temp,pohon[i]) && tumpukan.size()>=1) {
-				temp=tumpukan.top();
-				tumpukan.pop();
-			}
-			tumpukan.push(temp);
-			tumpukan.push(pohon[i]);
-		}
-		
-	}
-	for (int i=angka-2; i>=0; i--) {
-		if (tumpukan.size()<2) {
-			tumpukan.push(pohon[i]);
-		} else {
-			temp=tumpukan.top();
-			tumpukan.pop();
-			while ( belok(tumpukan.top(),temp,pohon[i]) && tumpukan.size()>=1) {
-				temp=tumpukan.top();
-				tumpukan.pop();
-			}
-			tumpukan.push(temp);
-			tumpukan.push(pohon[i]);
-		}
-		
-	}
-	double jarak=0,jaraksemen;
-	titik sebelum=tumpukan.top();
-	tumpukan.pop();
-	while (!tumpukan.empty()) {
-		titik kuren=tumpukan.top();
-		jaraksemen=sqrt((kuren.x-sebelum.x)*(kuren.x-sebelum.x)+(kuren.y-sebelum.y)*(kuren.y-sebelum.y));
-		jarak+=jaraksemen;
-		sebelum=kuren;
-		tumpukan.pop();
-	}
-	printf("%.0lf\n",jarak);
+  int n;
+  long long a;
+  long long b;
+
+  scanf("%d",&n);
+  for (int i=0; i<n; i++) {
+    scanf("%lld%lld", &a, &b);
+    P.push_back(mp(a,b));
+  }
+
+  convexHull();
+
+  // output keliling
+  double ret = sqrt(1.0 * dist2(S[0], S[S.size()-1]));
+  for (int i=1; i<S.size(); i++) {
+    ret += sqrt(1.0 * dist2(S[i], S[i-1]));
+  }
+  printf("%.0lf\n", ret);
+
 }
