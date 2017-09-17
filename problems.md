@@ -8,6 +8,7 @@
 * **ICPC Maranatha 2017 Qual 'TheOrderOfFunctionInlining'** : Lexicographic Toposort
 * **Compfest 2017 Training 'AncamanAlien'** : LCA with RMQ on Segment Tree
 * **ICPC Maranatha 2017 Trial 2 'Freckles'** : EMST without Delaunay Triangulation
+* **Compfest 2017 Final 'PerjalananAneh'** : Dijkstra with dynamic weight, require more observation
 
 ## Heap
 
