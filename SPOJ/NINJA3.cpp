@@ -1,21 +1,16 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
 using namespace std;
-
-long long gcd(long long a,long long b) {
-	if (b==0) return a;
-	return gcd(b,a%b);
-}
 
 int main() {
 	long long n,a,b,t;
-	cin>>t;
+	scanf("%lld",&t);
 	while(t--) {
-		cin>>n>>a>>b;
-		if (a<b) swap(a,b);
-		long long le=gcd(a,b);
+		scanf("%lld%lld%lld",&n,&a,&b);
+		long long le = __gcd(a,b);
 		for (long long i=0; i<le; i++) {
-			cout<<n;
+			printf("%lld\n", n);
 		}
-		cout<<endl;
+		printf("\n");
 	}
 }

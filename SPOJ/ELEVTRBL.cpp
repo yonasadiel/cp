@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <cstring>
+#include <queue>
+#include <cstdio>
 using namespace std;
 
 int f,s,g,u,d;
@@ -31,7 +33,7 @@ int main() {
 		}
 	}
 	if (flo[g]==-1) {
-		cout<<"use the stairs"<<endl;
+		printf("use the stairs\n");
 		return 0;
 	}
 	printf("%d\n",flo[g]);

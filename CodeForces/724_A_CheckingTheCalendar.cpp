@@ -1,5 +1,6 @@
-#include<bits/stdc++.h>
-#include<map>
+#include <iostream>
+#include <cstdio>
+#include <map>
 using namespace std;
 
 map<string,int> ang;

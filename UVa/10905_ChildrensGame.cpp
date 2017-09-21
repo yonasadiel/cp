@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 bool komparator (string i,string j) {
@@ -17,21 +19,14 @@ bool komparator (string i,string j) {
 }
 
 int main () {	
-	int n;
-	n=1;	
-	 while (n!=0 ){
+	int n=1;	
+	 while (n!=0){
 		scanf("%d",&n);
 		if (n==0) return 0;	
 		string belum[55];
-		for (int i=0;i<n;i++) {
-			cin >> belum[i];
-		}		
-		sort(belum,belum+n,komparator);		
-		for (int i=0;i<n;i++) {
-			cout << belum[i];
-		}		
+		for (int i=0;i<n;i++) { cin >> belum[i]; }		
+		sort(belum,belum+n,komparator);
+		for (int i=0;i<n;i++) { cout << belum[i]; }		
 		cout << endl;		
 	}
-	
-	return 0;
 }

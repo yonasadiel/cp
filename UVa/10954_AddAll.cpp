@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include <queue>
+#include <cstdio>
 using namespace std;
 
 int main() {
@@ -17,14 +18,14 @@ int main() {
 		}
 		for (int i=1; i<agnka; i++) {
 			a=-1*urut.top();
-//			cout << a << endl;
+			
 			urut.pop();
 			b=-1*urut.top();
 			urut.pop();
-//			cout << b << endl;
+
 			total=a+b;
 			harga+=total;
-//			cout << a << ' ' << b << ' ' << total << endl;
+
 			urut.push(total*-1);
 		}
 		total=-1*urut.top();

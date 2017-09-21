@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <stack>
+#include <iostream>
+#include <cstdio>
 using namespace std;
 
 string kalimat;

@@ -1,6 +1,8 @@
 #define tinggi first
 #define mulai second
-#include<bits/stdc++.h>
+#include <stack>
+#include <utility>
+#include <cstdio>
 using namespace std;
 
 int n,h,luastemp,luasmaks=-1;
