@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
 using namespace std;
 
 int n, maks, semak[1005],kase=1;

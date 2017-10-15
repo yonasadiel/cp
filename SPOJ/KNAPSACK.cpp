@@ -1,6 +1,8 @@
 #define fi first
 #define se second
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
 using namespace std;
 
 pair<int,int> arr[2005];
@@ -9,7 +11,6 @@ int dp[2005][2005];
 int n,s;
 
 int playdp(int pos, int w) {
-	cout<<pos<<" "<<w<<endl;
 	int &ret = dp[pos][w];
 	if (ret != -1) return ret;
 	

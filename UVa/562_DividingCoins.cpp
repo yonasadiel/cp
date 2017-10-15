@@ -1,4 +1,7 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
 int n,total;
@@ -7,8 +10,6 @@ int debug;
 int dp[105][50000];
 
 int selisih(int pos, int jumlah) {
-//	cout<<pos<<" "<<jumlah<<endl;
-//	cin>>debug;
 	if (jumlah>=total/2) {
 		return jumlah;
 	}

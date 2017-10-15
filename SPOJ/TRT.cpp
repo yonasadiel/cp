@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 int nilai[2005];
@@ -6,7 +8,6 @@ int dp[2005][2005];
 int n;
 
 int ambil(int endas, int buntut) {
-//	cout<<endas<<buntut<<umur<<endl;
 	int umur=endas-buntut+n;
 	if (dp[endas][buntut]!=-1) {
 		return dp[endas][buntut];
