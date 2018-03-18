@@ -9,4 +9,6 @@ CPPReference.chm
 *.unsolved.cpp
 *.exe
 *.pdf
+**.in
+**.out
 exe
