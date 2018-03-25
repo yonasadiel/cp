@@ -23,14 +23,11 @@ void tambah() {
 	else {
 		printf("%d\n",kuren.jarak%10000);
 	}
-	
-	
 }
 
 int main() {
 	memset(sudah,false,sizeof(sudah));
 	
-	//L
 	while ((awal!=0)&&(tujuan!=0)&&(jumlah!=0)){
 		if ((awal==0)&&(tujuan==0)&&(jumlah==0)) break;
 		printf("hh");

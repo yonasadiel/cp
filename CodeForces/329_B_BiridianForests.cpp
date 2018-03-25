@@ -1,6 +1,6 @@
 #define fi first
 #define se second
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int r,c;
