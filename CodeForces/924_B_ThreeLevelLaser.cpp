@@ -7,9 +7,8 @@ int e[100005];
 
 int main() {
   scanf("%d%d",&n,&u);
-  for (int i=0; i<n; i++) {
+  for (int i=0; i<n; i++)
     scanf("%d",&e[i]);
-  }
 
   double maks = -1;
   for (int i=1; i+1<n; i++) {
