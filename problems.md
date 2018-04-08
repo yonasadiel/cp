@@ -6,9 +6,6 @@
 * **UVa 12041 'Binary Fibonacci String'** : Lower / Upper Bound
 * **SPOJ AGGRCOW 'Aggresive Cows'**       : Binary Search The Answer
 * **SPOJ EKO 'Eko'**                      : Binary Search The Answer
-* **SPOJ ZSUM 'Just Add It'**             : Fast Exponentiation
-* **SPOJ FIBOSUM 'Fibonacci Sum'**        : Easy Matrix Multiplication
-* **SPOJ PIBO 'Fibonacci vs Polynomial'** : Hard Matrix Multiplication
 
 ## Backtracking
 
@@ -52,6 +49,12 @@
 
 ### Heap
 * **OSN 2017 'PekanbaruDefense'** : Minimum Cost with Conditions
+
+## Math
+
+* **SPOJ ZSUM 'Just Add It'**             : Fast Exponentiation
+* **SPOJ FIBOSUM 'Fibonacci Sum'**        : Easy Matrix Multiplication
+* **SPOJ PIBO 'Fibonacci vs Polynomial'** : Hard Matrix Multiplication
 
 ## Geometry
 
