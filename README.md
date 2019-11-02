@@ -1,9 +1,10 @@
 # Competitive Programming
 
-My solution for [Competitive Programming](https://en.wikipedia.org/wiki/Competitive_programming) Problems in Online Judge or Competition. Since 2015.
+My solution for [Competitive Programming](https://en.wikipedia.org/wiki/Competitive_programming) Problems in Online Judge or Competition, since 2015.
 
-Some are my team's code for team competition:
-* Remahan Malkist: with Ensof Barhami and Restu Wahyu Kartiko
-* TurfaJauhYa: with Turfa Auliarachman and Jauhar Arifin
+Some credit to my team's code for team competition:
+* Remahan Malkist: with [Ensof Barhami](https://github.com/ebarhami) and [Restu Wahyu Kartiko](https://github.com/restukartiko03)
+* TurfaJauhYa: with [Turfa Auliarachman](https://github.com/turfaa) and [Jauhar Arifin](https://github.com/jauhararifin)
+* SemogaTidakMatiLampu: with [Dicky Novanto](https://github.com/dickynovanto1103) and [Tony](https://github.com/daspers)
 
-See the indexed problems [here](https://github.com/yonasadiel/cp/blob/master/problems.md)
+See the indexed problems [here](./problems.md)
